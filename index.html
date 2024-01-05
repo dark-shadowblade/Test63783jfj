@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>User Input</title>
+    <script>
+        function askUser() {
+            var userAnswer = prompt("Choose M or D:");
+            document.getElementById("userAnswer").innerHTML =  userAnswer;
+        }
+
+        window.onload = askUser;
+    </script>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+
+<p id="userAnswer"></p>
+
 </body>
 </html>
