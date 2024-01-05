@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Hello World Example</title>
 </head>
 <body>
-    <h1>D</h1>
+    <h1 id="helloText">Hello, World!</h1>
+
+    <script>
+        // Get the h1 element by its ID
+        var helloElement = document.getElementById("helloText");
+
+        // Try to retrieve the user's input from local storage
+        var userValue = localStorage.getItem("userText");
+
+        // If there's a stored value, use it; otherwise, prompt the user
+        if (userValue) {
+            helloElement.innerText = userValue;
+        } else {
+            // Prompt the user for a new value
+            userValue = prompt("Enter your desired text:");
+
+            // Update the text content with the user's input
+            helloElement.innerText = userValue;
+
+            // Store the user's input in local storage for future visits
+            localStorage.setItem("userText", userValue);
+        }
+    </script>
 </body>
 </html>
